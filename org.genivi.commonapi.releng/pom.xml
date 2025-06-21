@@ -6,11 +6,11 @@
     <version>3.2.15-SNAPSHOT</version>
     <packaging>pom</packaging>
     <properties>
-        <tycho-version>0.22.0</tycho-version>
+        <tycho-version>2.4.0</tycho-version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <forceContextQualifier>v${maven.build.timestamp}</forceContextQualifier>
         <maven.build.timestamp.format>yyyyMMddHHmm</maven.build.timestamp.format>
-        <xtend-version>2.20.0</xtend-version>
+        <xtend-version>2.25.0</xtend-version>
     </properties>
 
     <pluginRepositories>
@@ -52,20 +52,11 @@
                     <filters>
                     </filters>
                     <environments>
-                        <environment>
-                            <os>win32</os>
-                            <ws>win32</ws>
-                            <arch>x86</arch>
-                        </environment>
+                        <!-- Removed x86 32-bit environments - no longer supported in Eclipse 4.19+ -->
                         <environment>
                             <os>win32</os>
                             <ws>win32</ws>
                             <arch>x86_64</arch>
-                        </environment>
-                        <environment>
-                            <os>linux</os>
-                            <ws>gtk</ws>
-                            <arch>x86</arch>
                         </environment>
                         <environment>
                             <os>linux</os>
@@ -77,6 +68,7 @@
                             <ws>cocoa</ws>
                             <arch>x86_64</arch>
                         </environment>
+                        <!-- aarch64 support you wanted to add -->
                         <environment>
                             <os>win32</os>
                             <ws>win32</ws>
@@ -98,7 +90,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>2.9.1</version>
+                <version>3.2.0</version>
             </plugin>
             <plugin>
                 <groupId>org.eclipse.tycho</groupId>
